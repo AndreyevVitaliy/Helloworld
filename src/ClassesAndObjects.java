@@ -5,6 +5,7 @@ public class ClassesAndObjects {
         newPerson.setAge(18);
 
 
+
         System.out.println("Меня зовут " + newPerson.getName() + " мне " + newPerson.getAge() + " лет");
         newPerson.speak();
         newPerson.sayHello();
@@ -13,40 +14,55 @@ public class ClassesAndObjects {
     }
 }
 
+/**
+ * Класс Person предназначен для создания персон
+ *
+ *
+ */
 class Person {
     //у класса могут быть
     //1. Данные
     //2. Дейтвия, которые он может совершать (методы)
-    String name; //имя
-    int age; //возраст
+    private String name; //имя c private доступно только в пределах класса
+    private int age; //возраст
 
     void speak() { //этот метод ничего не возвращает
         System.out.println(name + ", " + age);
     }
 
+    /**
+     * Метод расчета количества лет до пенсии
+     * @return int
+     */
     int calculateYearsToRetirement() {
-        int years = 65 - age;
-        return years;
+        return 65 - age;
     }
 
     void sayHello() {
         System.out.println("Hello!");
     }
 
-    void setName(String name) {
+    /**
+     * Метод установки имени объекта
+     * @param name tyoe:String
+     */
+    public void setName(String name) {
         this.name = name;
     }
 
 
-    String getName() {
+    public String getName() {
         return name;
     }
 
-    void setAge(int age) {
+    public void setAge(int age) {
+        if (age < 0){
+            System.out.println("Возраст введен не корректно");
+        }
         this.age = age;
     }
 
-    int getAge() {
+    public int getAge() {
         return age;
     }
 }
