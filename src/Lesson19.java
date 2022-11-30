@@ -1,33 +1,36 @@
 public class Lesson19 {
     public static void main(String[] args) {
-        Human human = new Human();
+        HumanOld human = new HumanOld();
         human.getInfo();
     }
 }
 
-class Human{
+class HumanOld{
     /**
      * Конструкторов класс может быть несколько
      * В данном случае отражен пример когда объект может быть создан со
      * значениями по умолчанию или с со значениями, которые указал пользователь
      */
-    public Human(){ //Конструктор класса
+
+    private String name; //переменные объекты
+    private int age; //переменные объекта
+
+    public HumanOld(){ //Конструктор класса
         this.name = "Новое имя";
         this.age = 0;
     }
 
-    public Human(String name){ //Конструктор класса
+    public HumanOld(String name){ //Конструктор класса
         this.name = name;
         this.age = 0;
     }
 
-    public Human(String name, int age){ //Конструктор класса
+    public HumanOld(String name, int age){ //Конструктор класса
         this.name = name;
         this.age = age;
     }
 
-    private String name;
-    private int age;
+
 
     /**
      * Устанавливает имя объекта
